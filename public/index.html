@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html>
+<title>HSN Go</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="icon" href="favicon.ico" sizes="16x16">
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+.boardmember {
+  padding:32px;
+  width:70%;
+}
+#go {
+		animation: rotation 4s infinite linear;
+}
+@keyframes rotation {
+		from {
+				transform: rotate(0deg);
+		}
+		to {
+				transform: rotate(359deg);
+		}
+}
+</style>
+<body class="w3-light-grey">
+<script>
+ var speed=[4,3,2,1,0.9,0.8,0.7,0.6,0.5,0.4,0.3];
+ //var speed=[0.9,0.8,0.7,0.6,0.5,0.4,0.3];
+ var speedi=0;
+</script>
+  
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1600px">
+
+  <!-- Header -->
+  <header class="w3-container w3-center w3-padding-32 w3-white">
+    <h1 class="w3-xxxlarge"><b>HSN Go Club</b></h1>
+    <h6>and the world of <span class="w3-tag">G0</span>&nbsp; &nbsp;<img  id="go" onclick="changeSpeed()" style="border-radius: 50px" src="go.jpg" alt="Smiley face" height="26" width="26"></h6>
+  </header>
+  <script>
+    function changeSpeed() {
+	  speedi=speedi+1;
+	  if (speedi >= speed.length) {
+	     speedi=0;
+	  }
+	  //alert(speed[speedi]);
+      document.getElementById("go").style.animation = "rotation "+speed[speedi]+"s infinite linear";
+  }
+</script>
+  
+    <div class="w3-bar w3-black" style="position: sticky; top: 0">
+  <a href="#ourclub" class="w3-bar-item w3-button"><i>Our Clubs and Our Goals</i></a>
+  <a href="#whatisgo" class="w3-bar-item w3-button w3-hide-small"><i>What is Go?</i></a>
+  <a href="#rulesofgo" class="w3-bar-item w3-button w3-hide-small"><i>Rules of Go</i></a>
+  <a href="#leesedol" class="w3-bar-item w3-button w3-hide-small"><i>AlphaGo Vs. Lee Sedol</i></a>
+  <a href="#kejie" class="w3-bar-item w3-button w3-hide-small"><i>AlphaGo vs. Ke Jie</i></a>
+  <a href="#board" class="w3-bar-item w3-button w3-hide-small"><i>Board Members</i></a>
+  <a href="#info" class="w3-bar-item w3-button w3-hide-small"><i>Information</i></a>
+  <a href="#vids" class="w3-bar-item w3-button w3-hide-small"><i>Videos</i></a>
+  <a href="#photos" class="w3-bar-item w3-button w3-hide-small"><i>Photos</i></a>  
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="navFunction()">&#9776;</a>
+  </div>
+
+  <div id="navcollapse" class="w3-bar-block w3-red w3-hide w3-hide-large w3-hide-medium">
+  <a href="#whatisgo" class="w3-bar-item w3-button"><i>What is Go?</i></a>
+  <a href="#rulesofgo" class="w3-bar-item w3-button"><i>Rules of Go</i></a>
+  <a href="#leesedol" class="w3-bar-item w3-button"><i>AlphaGo Vs. Lee Sedol</i></a>
+  <a href="#kejie" class="w3-bar-item w3-button"><i>AlphaGo vs. Ke Jie</i></a>
+  <a href="#board" class="w3-bar-item w3-button"><i>Board Members</i></a>
+  <a href="#info" class="w3-bar-item w3-button"><i>Information</i></a>
+  <a href="#vids" class="w3-bar-item w3-button"><i>Videos</i></a>
+  <a href="#photos" class="w3-bar-item w3-button"><i>Photos</i></a>  
+</div>
+
+<script>
+function navFunction() {
+    var x = document.getElementById("navcollapse");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+<header -->
+  <header class="w3-display-container w3-wide" id="home">
+    
+    <div class="w3-display-left w3-padding-large">
+    </div>
+  </header>
+
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+    
+      <!-- Blog entry -->
+      <div id="ourclub" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Our Club and Our Goals</h3>
+        </div>
+
+        <div class="w3-justify">
+          <img src="dc3bb6e919e521887ad975b0dd875712.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <p>The High School North Go Club is a club where students come together to learn and share their love of Go. We meet after-school on Wednesdays and Thursdays from 3 - 4 PM. We will play the wonderful games of Go and Gokamu during these meetings. We will also have reviews of games and show you the dos and don’ts of Go. There will be strategical analysis and group discussions of a match.
+<br><br>
+Everyone is welcome to join the HSN Go Club, regardless of your rank / previous experience. </p>
+          
+          <p class="w3-clear"></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+              <div class="w3-col l2 m3">
+                <img src="/w3images/avatar_smoke.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>George <span class="w3-opacity w3-medium">May 3, 2015, 6:32 PM</span></h4>
+                <p>Great blog post! Following</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      </hr>
+	  
+	  <div id="whatisgo" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>What is Go?</h3>
+        </div>
+
+        <div class="w3-justify">
+          <img src="DeepMind-AlphaGo.original_a228xK7.width-440_6Ou8Nzq.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <p>Go / Weiqi / Baduk / Igo is a traditional strategy board game of territory that was invented in ancient China and formalized in Japan. The professional board has a 19 x 19 grid of black lines. The game pieces, called stones, are placed on the line intersections. The goal is to acquire territory by surrounding parts of the board with your stones. Enemy stones can be captured by surrounding them with your stones. A game will end when both players pass (skip their turns) or when one resigns. Points are counted up when the game ends. Territory and / or captured stones give you points, and the player with the most points wins.</p>
+          
+          <p class="w3-clear"></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+              <div class="w3-col l2 m3">
+                <img src="/w3images/avatar_smoke.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>George <span class="w3-opacity w3-medium">May 3, 2015, 6:32 PM</span></h4>
+                <p>Great blog post! Following</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      </hr>
+	  
+	  <div id="rulesofgo" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>Rules of Go</h3>
+        </div>
+
+        <div class="w3-justify">
+          <img src="yo.jpg" alt="Girl Hat" style="width:100%" class="w3-padding-16">
+          <p>The game of Go starts off with an empty board. There are various board sizes, but the common ones are 19x19, 13x13, and 9x9, with professional games being played on the 19x19 board. Two players take turns placing game pieces, known as stones, on the board. Each player has an infinite supply of stones. One player has white stones, an
+		  d the other player has black stones. Stones are placed on the intersection of two lines. The dots (called star points) on the board mark the handicap points (handicap stones are only placed when the difference in rank between the two players is four or greater). Depending on the difference in rank between the two players, the lower rank player may start the game with some of his stones already on the board at the handicap points. 
+
+<br><br>Black goes first. In exchange for going first, black gives white a designated number of points (this is called komi). As Go is a territory game, claiming the most territory with the least number of stones is ideal. A territory is considered “alive” once it has two living eyes (an eye is a single living space). As such, claiming the co
+rners is the most efficient because you would only need to surround 2 sides. Claiming an edge requires surrounding 3 sides, and claiming the center would require surrounding all 4 sides.</p>
+          
+          <p class="w3-clear"></p>
+          <div class="w3-row w3-margin-bottom" id="demo1" style="display:none">
+            <hr>
+              <div class="w3-col l2 m3">
+                <img src="/w3images/avatar_smoke.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>George <span class="w3-opacity w3-medium">May 3, 2015, 6:32 PM</span></h4>
+                <p>Great blog post! Following</p>
+              </div>
+          </div>
+        </div>
+      </div>
+      </hr>
+
+      <!-- Blog entry -->
+      <div id="leesedol" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>ALPHAGO</h3>
+          <h5>AlphaGo Vs. <span class="w3-opacity">Lee Sedol</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="alphago-vs-lee-sedol.jpg" alt="AlphaGo vs. Lee Sedol" style="width:100%" class="w3-padding-16">
+          <p>The ultimate battle between humans and artificial intelligence. Below, we have posted the entirety of games 4 and 5 and their fifteen minute summaries. These games were arguably the most intense and interesting games of the match, so we highly recommend watching at least one of the videos. We guarantee that it will enhance your knowledge about Go. <br> <br>
+
+We have posted the entirety of games 4 and 5. We have also posted the 15 minute summaries for both games (since I highly doubt any of you would want to watch 6 hours of Go in one sitting). Michael Redmond, 9 dan professional, is the commentator in the videos and it is a great place for beginners to start. You should study the game yourself if you're really interested, but the Redmond does an excellent job explaining the game. </p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo2')"><b>Links</b></button></p>
+          <p class="w3-clear"></p>
+          
+          <!-- Example of comment field -->
+          <div id="demo2" style="display:none">
+            <div class="w3-row">
+              <hr>
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl_train.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Google DeepMind Match 4  <span class="w3-opacity w3-medium">Lee Sedol vs AlphaGo</span></h4>
+                <a href="https://www.youtube.com/watch?v=yCALyQRN3hw">https://www.youtube.com/watch?v=yCALyQRN3hw</a><br>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Match 4 15 Minute Summary  <span class="w3-opacity w3-medium">Lee Sedol vs AlphaGo</span></h4>
+                <a href="https://www.youtube.com/watch?v=yCALyQRN3hw">https://www.youtube.com/watch?v=G5gJ-pVo1gs</a>
+              </div>
+            </div>
+			<div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Google DeepMind Match 5  <span class="w3-opacity w3-medium">Lee Sedol vs AlphaGo</span></h4>
+                <a href="https://www.youtube.com/watch?v=mzpW10DPHeQ">https://www.youtube.com/watch?v=mzpW10DPHeQ</a>
+              </div>
+            </div>
+			<div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Match 5 15 Minute Summary  <span class="w3-opacity w3-medium">Lee Sedol vs AlphaGo</span></h4>
+                <a href="https://www.youtube.com/watch?v=QxHdPdRcMhw">https://www.youtube.com/watch?v=QxHdPdRcMhw</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blog entry -->
+      <div id="kejie" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>More ALPHAGO</h3>
+          <h5>AlphaGo Vs. <span class="w3-opacity">Ke Jie</span></h5>
+        </div>
+
+        <div class="w3-justify">
+          <img src="KeJie.jpg" alt="AlphaGo vs. Ke Jie" style="width:100%" class="w3-padding-16">
+          <p>After months of rumors and insistence from Chinese pros, AlphaGo finally played official games with Ke Jie, who is regarded as the world's current best player. <br> <br>
+
+AlphaGo came back stronger than before, partially because it also played many unofficial games online. Ke Jie said that the future is AI, and he was swept. Lee Sedol has said that he may be the only person to ever beat AlphaGo. As of now, that is the case, as AlphaGo has retired from professional Go. Unless Google open sources the program, Lee Sedol will be the only person to beat AlphaGo.</p>
+          <p class="w3-right"><button class="w3-button w3-black" onclick="myFunction('demo3')"><b>Links</b></button></p>
+          <p class="w3-clear"></p>
+          
+          <!-- Example of comment field -->
+          <div id="demo3" style="display:none">
+            <hr>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>Future of Go Match 1  <span class="w3-opacity w3-medium">Ke Jie vs AlphaGo</span></h4>
+                <a href="https://www.youtube.com/watch?v=Z-HL5nppBnM">https://www.youtube.com/watch?v=Z-HL5nppBnM</a>
+              </div>
+            </div>
+            <div class="w3-row w3-margin-bottom">
+              <div class="w3-col l2 m3">
+                <img src="/w3images/girl.jpg" style="width:90px;">
+              </div>
+              <div class="w3-col l10 m9">
+                <h4>AlphaGo, Pair Go, and Team Go  <span class="w3-opacity w3-medium">Ke Jie vs AlphaGo</span></h4>
+                <a href="https://www.youtube.com/watch?v=V-_Cu6Hwp5U">https://www.youtube.com/watch?v=V-_Cu6Hwp5U</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    <!-- END BLOG ENTRIES -->
+    </div>
+
+    <!-- About/Information menu -->
+    <div class="w3-col l4">
+      <!-- About Card -->
+      <div class="w3-white w3-margin">
+        <img src="2017-09-07.png" alt="Logo" style="width:100%">
+        <div class="w3-container w3-black">
+          <h4>"The rules of Go are so elegant, organic, and rigorously logical that if intelligent life forms exist elsewhere in the universe, they almost certainly play Go" - Edward Laskar</h4>
+        </div>
+      </div>
+      <hr>
+
+      <!-- Posts -->
+      <div id="board" class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Board Members</h4>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+          <li class="w3-padding-16" onclick="document.getElementById('Eric').style.display='block'">
+            <img src="Yoooooo.PNG" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Eric Liu</span>
+            <br>
+            <span>Founder/President</span>
+          </li>
+          <li class="w3-padding-16" onclick="document.getElementById('Charles').style.display='block'">
+            <img src="the-speech-2_3.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Charles Tian</span>
+            <br>
+            <span>President</span>
+          </li>
+          <li class="w3-padding-16" onclick="document.getElementById('Raymond').style.display='block'">
+            <img src="raymond_1_orig.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Raymond Chang</span>
+            <br>
+            <span>Treasurer</span>
+          </li>
+          <li class="w3-padding-16" onclick="document.getElementById('Adam').style.display='block'">
+            <img src="picture-1_1.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Adam Deng</span>
+            <br>
+            <span>Secretary</span>
+          </li>
+		  <li class="w3-padding-16" onclick="document.getElementById('Daniel').style.display='block'">
+            <img src="c.jpeg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+            <span class="w3-large">Daniel Niedfeldt</span>
+            <br>
+            <span>Public Relations</span>
+          </li>
+        </ul>
+      </div>
+      <hr>
+
+      <!-- Advertising -->
+      <!--<div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Video of some sort</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <div class="w3-container w3-display-container w3-light-grey w3-section" style="height:200px">
+            <span class="w3-display-middle">Your AD Here</span>
+          </div>
+        </div>
+      </div>
+      <hr>-->
+
+      <!-- Tags -->
+      <div id="info" class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Information</h4>
+        </div>
+        <div class="w3-container w3-white">
+		<ul class="w3-ul w3-white">
+          <li class="w3-padding-16">
+            <span class="w3-large">Email: hsngoclub@gmail.com</span>
+            <br>
+          </li>
+		  <li class="w3-padding-16">
+            <span class="w3-large">Room Number: 229</span>
+            <br>
+          </li>
+		</ul>
+        </div>
+      </div>
+      <hr>
+	  
+     <div id="vids" class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Important Videos</h4>
+        </div>
+        <div class="w3-container w3-white w3-padding">
+           <iframe width="100%" height="400" src="https://www.youtube.com/embed/SUbqykXVx0A" frameborder="0" allowfullscreen></iframe>
+         </div>
+      </div>
+      <hr>
+
+      <!-- Inspiration -->
+      <div id="photos" class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Photos</h4>
+        </div>
+        <div class="w3-row-padding w3-white">
+		<div class="w3-col s6">
+            <p><img src="IMG_9960.JPG" alt="Picture" style="width:200%; height: 200%; transform: rotate(90deg); padding: 25px"></p>
+          </div>
+          <!--<div class="w3-col s6">
+            <p><img src="filler.jpg" alt="Filler" style="width:100%"></p>
+            <p><img src="filler.jpg" alt="Filler" style="width:100%"></p>
+          </div>
+          <div class="w3-col s6">
+            <p><img src="filler.jpg" alt="Men in Hats" style="width:100%;"></p>
+            <p><img src="filler.jpg" alt="Men in Hats" style="width:100%;"></p>
+         </div>-->
+        </div>
+      </div>
+      <hr>
+
+      
+      <hr>
+      
+      <!-- Subscribe -->
+      <!--<div class="w3-white w3-margin">
+        <div class="w3-container w3-padding w3-black">
+          <h4>Login</h4>
+        </div>
+        <div class="w3-container w3-white">
+          <p>Enter your e-mail below and get notified on the latest blog posts.</p>
+          <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail" style="width:100%"></p>
+          <p><button type="button" onclick="document.getElementById('subscribe').style.display='block'" class="w3-button w3-block w3-red">Subscribe</button></p>
+        </div>
+      </div>-->
+
+    <!-- END About/Intro Menu -->
+    </div>
+
+  <!-- END GRID -->
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Subscribe Modal -->
+<div id="subscribe" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content" style="padding:32px">
+    <div class="w3-container w3-white">
+      <i onclick="document.getElementById('subscribe').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h2 class="w3-wide">SUBSCRIBE</h2>
+      <p>Join my mailing list to receive updates on the latest blog posts and other things.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('subscribe').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<div id="Eric" class="w3-modal w3-animate-opacity">
+  <div class="w3-card w3-modal-content w3-animate-zoom boardmember">
+      <i onclick="document.getElementById('Eric').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h3 class="w3-wide"><center>Eric Liu</center></h3>
+  	  <center><img src="Yoooooo.PNG" alt="Image" style="width:100%"></center>
+    <div class="w3-container w3-white">
+      <p style="font-size:18px">Eric Liu is the founder and president of Go club. He is very interested in the game of Go,
+ and is inspired to sharpen his skills for it. His ranking
+ is unclear, as he as not played many ranked matches. Eric's 2 favorite activites
+ are piano and swimming. During lunch, he is usually in the practice room on the piano. He hopes 
+that this club will be able to educate many people on how the game
+ of Go works and elevate their skill level.</p>
+    </div>
+  </div>
+</div>
+
+<div id="Charles" class="w3-modal w3-animate-opacity">
+  <div class="w3-card w3-modal-content w3-animate-zoom boardmember">
+    <i onclick="document.getElementById('Charles').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+    <h3><center>Charles Tian</center></h3>
+	<center><img src="the-speech-2_3.png" alt="Image" style="width:100%"></center>
+    <div class="w3-container w3-white">
+      <p style="font-size:18px">Charles is your president for the Go club! If you’re looking for a sushi addict and someone who’s interested in correcting your grammar, Charles is your man. He started playing Go three years ago and is currently ranked at 10 kyu. Charles is anti-social media, so don’t expect to find him on Instagram or Snapchat. He is excited to meet all of the members of the Go club in the following year.</p>
+	</div>
+  </div>
+</div>
+
+<div id="Raymond" class="w3-modal w3-animate-opacity">
+  <div class="w3-card w3-modal-content w3-animate-zoom boardmember">
+      <i onclick="document.getElementById('Raymond').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h3><center>Raymond Chang</center></h3>
+	  <center><img src="raymond_1_orig.jpg" alt="Image" style="width:100%"></center>
+	  <div class="w3-container w3-white">
+        <p style="font-size:18px">Raymond is your treasurer. This anime and Korean web comic fanboy / addict is the most philosophical of the bunch, and spends his days asking people to debate him on really weird and controversial topics (for example, why adultery is a good thing). He has this habit of watching an anime episode before going to bed, and still does it despite the fact that it messes with his sleep cycle. He is excited to meet all the wonderful players of Go!</p>
+	  </div>
+  </div>
+</div>
+
+<div id="Adam" class="w3-modal w3-animate-opacity">
+  <div class="w3-card w3-modal-content w3-animate-zoom boardmember">
+    <i onclick="document.getElementById('Adam').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+    <h3><center>Adam Deng</center></h3>
+	<center><img src="picture-1_1.png" alt="Image" style="width:100%"></center>
+	<div class="w3-container w3-white">
+      <p style="font-size:18px">Adam is the living definition of a Mathaholic. This math man is arguably the smartest person in terms of math. Adam gets through every day by telling himself three things: math, math and more math. Besides math, Adam also competes in debate competitions with Charles (they haven't been very successful, but at least they tried). Adam has been playing Go for a very long time now, and loves the game. He's currently ranked at 5k, which is the best out of everyone on the board. He can not wait to meet everyone who wants to compete in the game of Go.</p>
+	</div>
+  </div>
+</div>
+
+<div id="Daniel" class="w3-modal w3-animate-opacity">
+  <div class="w3-card w3-modal-content w3-animate-zoom boardmember">
+      <i onclick="document.getElementById('Daniel').style.display='none'" class="fa fa-remove w3-transparent w3-button w3-xlarge w3-right"></i>
+      <h3><center>Daniel Neidfeldt</center></h3>
+	  <center><img src="c.jpeg" alt="Image" style="width:100%"></center>
+	  <div class="w3-container w3-white">
+         <p style="font-size:18px">Daniel is relatively new to Go in comparison to the other members. He is ranked at 20 kyu and basically just knows how the game works. He runs Track for the school team and is also quite proficient academically. He looks forward to becoming a better Go player in the future and teaching others.</p>
+	  </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey" style="padding:32px">
+  <a href="#" class="w3-button w3-black w3-padding-large w3-margin-bottom"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <p>Website Created by Eric Liu</p>
+  <p>Thanks to W3schools for resources and information</p>
+</footer>
+
+<script>
+// Toggle between hiding and showing blog replies/comments
+document.getElementById("myBtn").click();
+function myFunction(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+function likeFunction(x) {
+    x.style.fontWeight = "bold";
+    x.innerHTML = "&#10003; Liked";
+}
+</script>
+
+</body>
+</html>
